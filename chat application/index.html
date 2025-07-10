@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Chat App</div>
+    <button id="exitBtn" class="hidden">Exit Chat Room</button>
+  </nav>
+
+  <main id="mainContent">
+    <section id="homePage" class="home">
+      <div class="home-content">
+        <img src="./speak.png" alt="Chat Icon" class="avatar">
+        <h1><strong>Real-Time Chat App</strong></h1>
+        <p>Connect instantly with anyone, anywhere.<br/>Experience seamless, real-time messaging.</p>
+        <input type="text" id="username" placeholder="Enter your name" />
+        <button id="loginBtn">Login</button>
+      </div>
+    </section>
+
+    <section id="chatRoom" class="hidden">
+
+      <div class="sidebar">
+        <h3>Online Users</h3>
+        <ul id="userList"></ul>
+      </div>
+      <div class="chatBox">
+        <div id="chatMessages"></div>
+        <div class="inputArea">
+          <input type="text" id="msgInput" placeholder="Type your message..." />
+          <button id="sendBtn">Send</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/socket.io/socket.io.js"></script>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time Tracker</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      width: 200px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h3>Time Tracker</h3>
+  <p>Tracking your activity...</p>
+  <button id="openDashboard">View Dashboard</button>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.getElementById("openDashboard").addEventListener("click", () => {
+        chrome.tabs.create({
+          url: chrome.runtime.getURL("dashboard.html")
+        });
+      });
+    });
+  </script>
+</body>
+</html>
